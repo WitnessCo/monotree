@@ -50,7 +50,8 @@ macro_rules! impl_bench_group {
                         ("blake2s", Blake2s),
                         ("blake2b", Blake2b),
                         ("sha2", Sha2),
-                        ("sha3", Sha3)
+                        ("sha3", Sha3),
+                        ("keccak256", Keccak256)
                     ],
                     [insert, get, remove]
                 );

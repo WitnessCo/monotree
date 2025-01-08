@@ -91,3 +91,20 @@ impl Hasher for Sha3 {
         slice_to_hash(hash.as_slice())
     }
 }
+
+#[derive(Clone, Debug)]
+/// A hasher using `SHA3` or `Keccak` hash function
+pub struct Keccak256;
+impl Hasher for Keccak256 {
+    fn new() -> Self {
+        Keccak256
+    }
+
+    /// Currently supports 256-bit or 32-byte only.
+    fn digest(&self, bytes: &[u8]) -> Hash {
+        let mut hasher = sha3::Keccak256::new();
+        hasher.input(bytes);
+        let hash = hasher.result();
+        slice_to_hash(hash.as_slice())
+    }
+}
