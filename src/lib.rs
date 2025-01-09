@@ -123,7 +123,7 @@ pub type Proof = Vec<(bool, Vec<u8>)>;
 pub type DefaultDatabase = database::MemoryDB;
 
 /// A type indicating hasher selected by default.
-pub type DefaultHasher = hasher::Blake3;
+pub type DefaultHasher = hasher::Keccak256;
 
 pub use self::bits::Bits;
 pub use self::database::Database;
